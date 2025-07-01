@@ -14,7 +14,7 @@
   --light-color: #ffffff;
   --dark-color: #000000;
 
-  --bg-overlay: rgba(255, 255, 255, 0.92);
+  --bg-overlay: rgba(255, 255, 255, 0.3);
   --bg-header-gradient: linear-gradient(to right, #2b5876, #4e4376);
   --bg-body: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url("hostel2_0.jpg");
   --bg-captcha: #e0e0e0;
@@ -54,7 +54,13 @@ body {
 
 .overlay {
   background-color: var(--bg-overlay);
+  display: flex;
+  flex-direction: column;
   min-height: 100vh;
+}
+
+.container {
+  flex-grow: 1;
 }
 
 /* ===================== */
@@ -138,7 +144,7 @@ footer {
   color: var(--text-color-light);
   text-align: center;
   padding: 20px;
-  margin-top: 60px;
+  margin-top: auto; /* Pushes footer to bottom when space allows */
 }
 
 /* ===================== */
