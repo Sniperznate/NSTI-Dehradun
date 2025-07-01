@@ -1,0 +1,197 @@
+/* ===================== */
+/* Root Theme Variables  */
+/* ===================== */
+:root {
+  --font-family: 'Poppins', sans-serif;
+
+  --primary-color: #4e4376;
+  --secondary-color: #2b5876;
+  --accent-color: #6a5acd;
+  --highlight-color: #00b894;
+  --success-color: #28a745;
+  --info-color: #0d6efd;
+  --danger-color: #dc3545;
+  --light-color: #ffffff;
+  --dark-color: #000000;
+
+  --bg-overlay: rgba(255, 255, 255, 0.92);
+  --bg-header-gradient: linear-gradient(to right, #2b5876, #4e4376);
+  --bg-body: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url("hostel2_0.jpg");
+  --bg-captcha: #e0e0e0;
+  --bg-footer: #222;
+
+  --box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  --header-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  --border-radius: 15px;
+  --input-border-radius: 8px;
+  --button-border-radius: 6px;
+
+  --text-color-dark: #000;
+  --text-color-light: #fff;
+  --text-color-muted: #666;
+  --text-color-accent: #4e4376;
+
+  --scroll-speed: 20s;
+  --news-scroll-speed: 10s;
+
+  --section-padding: 25px;
+  --gap-size: 1.5rem;
+}
+
+/* ===================== */
+/* Global Styles         */
+/* ===================== */
+body {
+  font-family: var(--font-family);
+  background: var(--bg-body);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  margin: 0;
+  padding: 0;
+}
+
+.overlay {
+  background-color: var(--bg-overlay);
+  min-height: 100vh;
+}
+
+/* ===================== */
+/* Header Styles         */
+/* ===================== */
+header {
+  background: var(--bg-header-gradient);
+  color: var(--text-color-light);
+  overflow: hidden;
+  height: 60px;
+  position: relative;
+  box-shadow: var(--header-shadow);
+}
+
+.scrolling-header h1 {
+  position: absolute;
+  white-space: nowrap;
+  display: block;
+  padding-left: 100%;
+  animation: scroll-left var(--scroll-speed) linear infinite;
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin: 10px 0;
+}
+
+@keyframes scroll-left {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+/* ===================== */
+/* Card / Box Styling    */
+/* ===================== */
+.box {
+  background-color: var(--light-color);
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  padding: var(--section-padding);
+  transition: transform 0.3s ease;
+}
+
+.box:hover {
+  transform: translateY(-5px);
+}
+
+/* ===================== */
+/* CAPTCHA Styling       */
+/* ===================== */
+.captcha-code {
+  background-color: var(--bg-captcha);
+  padding: 10px 15px;
+  font-size: 20px;
+  font-weight: bold;
+  letter-spacing: 3px;
+  border-radius: var(--input-border-radius);
+  user-select: none;
+}
+
+.refresh-btn {
+  background-color: var(--accent-color);
+  color: var(--text-color-light);
+  border: none;
+  padding: 10px 12px;
+  border-radius: var(--button-border-radius);
+  cursor: pointer;
+}
+
+.refresh-btn:hover {
+  background-color: var(--primary-color);
+}
+
+/* ===================== */
+/* Footer Styling        */
+/* ===================== */
+footer {
+  background-color: var(--bg-footer);
+  color: var(--text-color-light);
+  text-align: center;
+  padding: 20px;
+  margin-top: 60px;
+}
+
+/* ===================== */
+/* News Scroller         */
+/* ===================== */
+.scroll-news {
+  height: 200px;
+  overflow: hidden;
+  position: relative;
+}
+
+.scroll-news ul {
+  position: absolute;
+  width: 100%;
+  animation: scrollNews var(--news-scroll-speed) linear infinite;
+  padding-left: 20px;
+  list-style: none;
+  margin: 0;
+}
+
+@keyframes scrollNews {
+  0% {
+    top: 100%;
+  }
+  100% {
+    top: -100%;
+  }
+}
+
+/* ===================== */
+/* Forgot Password Link  */
+/* ===================== */
+.forgot-password {
+  display: block;
+  text-align: right;
+  margin-top: -10px;
+  margin-bottom: 15px;
+  font-size: 0.9rem;
+}
+
+.forgot-password a {
+  color: var(--text-color-accent);
+  text-decoration: none;
+}
+
+.forgot-password a:hover {
+  text-decoration: underline;
+}
+
+/* ===================== */
+/* Sign Up Button        */
+/* ===================== */
+.signup-btn {
+  display: none;
+  margin-top: 10px;
+}
