@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Campus Management</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="header">
+    
+  </header>
+
+  <section class="hero">
+    <div class="overlay"></div>
+    <div class="hero-login">
+      <div class="login-box">
+        <div class="login-header">
+          <span>User Login</span>
+        </div>
+        <form>
+          <label>Email / Mobile</label>
+          <input type="text" placeholder="Enter email or mobile" />
+
+          <label>Password</label>
+          <input type="password" placeholder="Enter password" />
+
+          <label>Role</label>
+          <select>
+            <option value="">Select Role</option>
+            <option>Super Admin 1</option>
+            <option>Super Admin 2</option>
+            <option>To 1</option>
+            <option>To 2</option>
+            <option>To 3</option>
+            <option>To 4</option>
+          </select>
+
+          <label>Enter Captcha</label>
+          <div class="captcha-row">
+            <span id="captcha" class="captcha-box"></span>
+            <button type="button" id="refreshCaptcha" title="Refresh Captcha">&#x21bb;</button>
+          </div>
+          <input type="text" id="captchaInput" placeholder="Enter captcha" autocomplete="off" />
+
+          <div class="actions">
+            <button type="submit">Login</button>
+            <a href="#" class="forgot-link">Forgot Password?</a>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="hero-content">
+      <div class="animated-marquee">
+        <span>Welcome to Our Campus Portal</span>
+      </div>
+    </div>
+    <div class="hero-side-cards">
+      <div class="address-card">
+        <h3>Campus Address</h3>
+        <p>NIMI Bhat Skill Apprentice Portal<br>
+        123 Skill Road, Dehradun, Uttarakhand, India<br>
+        Phone: +91-1234567890<br>
+        Email: info@nimibhatportal.in</p>
+      </div>
+      <div class="news-card">
+        <h3>Latest News & Updates</h3>
+        <marquee direction="up" scrollamount="3" height="100" onmouseover="this.stop();" onmouseout="this.start();">
+          <div><a href="https://nimi.gov.in/news1" target="_blank">Admissions Open for 2025 Batch</a></div>
+          <div><a href="https://nimi.gov.in/news2" target="_blank">Skill Competition Results Announced</a></div>
+          <div><a href="https://nimi.gov.in/news3" target="_blank">New Courses Launched in IT Sector</a></div>
+          <div><a href="https://nimi.gov.in/news4" target="_blank">Campus Placement Drive on 15th July</a></div>
+        </marquee>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3>Our Location</h3>
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3559.858217440371!2d75.7893533150442!3d26.91243398312206!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x396db5d8e5e5d8e5%3A0x7e7e7e7e7e7e7e7e!2sNIMI%20Bhat%20Skill%20Apprentice%20Portal!5e0!3m2!1sen!2sin!4v1625234567890!5m2!1sen!2sin"
+          width="100%" height="180" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+      </div>
+      <div class="footer-section">
+        <h3>Important Links</h3>
+        <ul>
+          <li>
+            <a href="https://nimi.gov.in/" target="_blank">NIMI Official Website</a>
+          </li>
+          <li>
+            <a href="https://apprenticeshipindia.gov.in/" target="_blank">Apprenticeship Portal</a>
+          </li>
+          <li>
+            <a href="https://dgt.gov.in/" target="_blank">Directorate General of Training (DGT)</a>
+          </li>
+          <li>
+            <a href="https://skillindia.gov.in/" target="_blank">Skill India</a>
+          </li>
+          <li>
+            <a href="https://www.naps.gov.in/" target="_blank">NAPS Portal</a>
+          </li>
+          <li>
+            <a href="https://www.nscsindia.org/" target="_blank">NSCS India</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      &copy; 2025 NIMI Bhat Skill Apprentice Portal | All Rights Reserved
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script>
+function generateCaptcha(length = 6) {
+  const chars = 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789';
+  let captcha = '';
+  for (let i = 0; i < length; i++) {
+    captcha += chars.charAt(Math.floor(Math.random() * chars.length));
+  }
+  return captcha;
+}
+
+function setCaptcha() {
+  document.getElementById('captcha').textContent = generateCaptcha();
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+  setCaptcha();
+  document.getElementById('refreshCaptcha').onclick = setCaptcha;
+});
+</script>
+</body>
+</html>
