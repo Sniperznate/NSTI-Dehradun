@@ -1,3 +1,8 @@
+* {
+  user-select: none;
+  --webkit-userr-drag: none;
+}
+
 :root {
   --font-family: 'Poppins', sans-serif;
 
@@ -95,10 +100,6 @@ header {
   box-shadow: var(--box-shadow);
   padding: var(--section-padding);
   transition: transform 0.3s ease;
-}
-
-.box:hover {
-  transform: translateY(-5px);
 }
 
 .captcha-code {
